@@ -38,11 +38,14 @@ export class UploadComponent implements OnInit {
   }
 
   addToUploads(fileList: any) {
+    console.log("addToUploads()");
     const files = [...fileList];
     this.files = this.files.concat(files);
+    console.log(files[0].size);
     this.files = this.files.filter((val) => {
-      return val.size < 50000;
+      return val.size < 1000000;
     });
+    console.log(this.files.length);
   }
 
   onUpload() {

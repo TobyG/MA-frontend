@@ -1,4 +1,4 @@
-<p>Max. file size is 5 MB.</p>
+<p>Max. image size is 1 MB.</p>
 
 <div class="dropzone" [class.hovering]="hovering" fileDrop (dropped)="onDropFiles($event)"
     (hovered)="toggleHover($event)" *ngIf="this.mode !== 'upload'">
@@ -37,8 +37,6 @@
     <mat-list-item *ngFor="let file of this.files; let i = index">
         <mat-icon matListIcon>insert_drive_file</mat-icon>
         <h4 matLine>{{file.name}}</h4>
-        <!-- <mat-progress-bar mode="determinate" value="{{ percentages[i] | async }}"></mat-progress-bar> -->
-        <!-- <p matLine>{{tasks[i].bytesTransferred | fileSize}} of {{tasks[i].totalBytes | fileSize }}</p> -->
 
         <mat-divider></mat-divider>
 
