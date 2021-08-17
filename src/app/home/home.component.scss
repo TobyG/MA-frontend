@@ -1,0 +1,74 @@
+.container {
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  width: 400px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+}
+.title {
+  font-family: staatliches;
+}
+
+.address-input {
+  border-color: #f0f0f0;
+  border-radius: 120px;
+  font-size: 100%;
+  padding: 12px;
+  border: 0;
+  font-family: aleo-light;
+  background-color: #33364a;
+  color: white;
+  outline: none;
+  width: 370px;
+}
+.address-button {
+  padding: 12px;
+  width: 120px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #1969ff;
+  font-family: staatliches;
+  font-size: 100%;
+  margin: 25px;
+  cursor: pointer;
+  color: white;
+}
+
+.chart-container {
+  width: 800px;
+}
+
+::ng-deep .ngx-charts {
+  * {
+    // fill: black !important;
+    font-family: staatliches;
+  }
+
+  .tooltip {
+    font-family: staatliches;
+  }
+}
+
+::ng-deep .chart-legend {
+  .legend-labels {
+    font-family: staatliches;
+  }
+
+  .legend-title {
+    font-family: staatliches;
+  }
+}
+
+::ng-deep ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
+  .tooltip-caret.position-top {
+    border-top-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  background-color: white;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  color: black;
+  font-family: staatliches;
+}

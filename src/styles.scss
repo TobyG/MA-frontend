@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: staatliches;
+  src: url(/assets/fonts/Staatliches-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: aleo-light;
+  src: url(/assets/fonts/Aleo-Light.ttf) format("truetype");
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: staatliches, "Helvetica Neue", sans-serif;
+}

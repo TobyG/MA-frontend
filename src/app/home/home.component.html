@@ -1,0 +1,17 @@
+<div class="container">
+    <h1 class="title">Detect.io</h1>
+    <input class="address-input">
+    <upload></upload>
+    <button class="address-button">Upload</button>
+
+</div>
+
+
+<div #containerRef class="chart-container">
+    <ngx-charts-pie-chart [view]="[containerRef.offsetWidth, 400]" [scheme]="colorScheme" [results]="single"
+        [legend]="true" [labels]="true" [doughnut]="true">
+    </ngx-charts-pie-chart>
+</div>
+
+
+
