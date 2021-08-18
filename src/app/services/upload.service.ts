@@ -8,5 +8,11 @@ import { Injectable } from "@angular/core";
 export class UploadService {
   constructor() {}
 
-  uploadFile(file: any) {}
+  // SEND MULTIPLE IMAGES AT ONCE OR ONLY IMAGE BY IMAGE ?
+  // HOW TO GET STATISTICS ?
+/**
+ * sends post request to server with image  
+ * @param file set of image to be uploaded
+ */
+  uploadFile(file: File) {}
 }

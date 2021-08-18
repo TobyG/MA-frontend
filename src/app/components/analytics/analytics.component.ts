@@ -1,11 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"],
+  selector: 'analytics',
+  templateUrl: './analytics.component.html',
+  styleUrls: ['./analytics.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class AnalyticsComponent implements OnInit {
+
   single: any[] = [
     {
       name: "Hole",
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
       value: 12,
     },
   ];
+  
   view: any[] = [700, 400];
 
   // options
@@ -29,7 +31,9 @@ export class HomeComponent implements OnInit {
     domain: ["#01205c", "#013089", "#0240b7", "#0250e5", "#3573ea	", "#6796ef	"],
   };
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
 }

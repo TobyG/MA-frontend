@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { SnackService } from "../services/snack.service";
-import { UploadService } from "../services/upload.service";
+import { SnackService } from "../../services/snack.service";
+import { UploadService } from "../../services/upload.service";
 
 @Component({
   selector: "upload",
@@ -11,13 +11,15 @@ export class UploadComponent implements OnInit {
   files: File[] = [];
   mode: string = "";
   hovering: boolean = false;
+  
 
   constructor(
     public uService: UploadService,
     private snackService: SnackService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   toggleHover(event: any) {
     console.log(event);
@@ -46,6 +48,7 @@ export class UploadComponent implements OnInit {
       return val.size < 1000000;
     });
     console.log(this.files.length);
+    console.log(this.files);
   }
 
   onUpload() {

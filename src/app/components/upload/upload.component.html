@@ -5,34 +5,34 @@
 
     <p>Drag files here</p>
 
-    <div>
-        <input class="hide-input" type=file accept="image/*, .pdf" id="fileinput" #fileinput
+        <input class="hide-input" type=file accept="image/*" id="fileinput" #fileinput
             (change)="onFileSelect($event)" multiple="multiple">
-        <button mat-flat-button color="primary" (click)="fileinput.click()">
+        <button class="my-button select-button" (click)="fileinput.click()">
             or select from device</button>
-    </div>
 
 </div>
 
 
-<mat-divider>
-</mat-divider>
 
-<mat-list *ngIf="this.mode != 'upload'">
-    <mat-list-item *ngFor="let file of this.files; let i = index">
+
+<div *ngIf="this.mode != 'upload'">
+    <div class="file-entry" *ngFor="let file of this.files; let i = index">
         <!-- <mat-icon matListIcon>{{this.selectIcon(file.type)}}</mat-icon> -->
-        <h4 matLine>{{file.name}}</h4>
-        <p matLine>{{file.size | fileSize}}</p>
+        <div>
+            <h4>{{file.name}}</h4>
+            <p>{{file.size | fileSize}}</p>
+        </div>
 
         <button *ngIf="mode != 'upload'" mat-icon-button (click)="onRemove(i)">
             <mat-icon>cancel</mat-icon>
         </button>
-        <mat-divider></mat-divider>
 
-    </mat-list-item>
-    <button class="upload" *ngIf="files.length > 0" color="primary" mat-flat-button (click)="onUpload()">Upload</button>
-</mat-list>
+    </div>
+    <button class="my-button upload-button" *ngIf="files.length > 0" (click)="onUpload()">Upload</button>
 
+</div>
+
+<!--
 <mat-list *ngIf="this.mode == 'upload'">
     <mat-list-item *ngFor="let file of this.files; let i = index">
         <mat-icon matListIcon>insert_drive_file</mat-icon>
@@ -42,3 +42,5 @@
 
     </mat-list-item>
 </mat-list>
+
+-->
