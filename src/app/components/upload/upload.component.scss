@@ -34,21 +34,18 @@
   background-color: #1969ff;
   font-family: staatliches;
   font-size: 100%;
-  margin: 20px;
+  margin: 10px;
   cursor: pointer;
   color: white;
 }
 
 .file-entry {
-  margin: 5px;
-  padding: 5px;
-}
-
-.file-entry:hover {
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  transition: 0.2s;
-
+  padding: 15px;
+  border-radius: 15px;
+  &.hovering {
+    background-color: #f0f0f0;
+    transition: 0.2s;
+  }
 }
 
 .upload-button {
@@ -57,4 +54,15 @@
 
 .select-button {
   width: 240px;
+}
+
+.file-entries {
+  margin: 20px 0px;
+}
+.file-detail-container {
+  text-align: start;
+}
+
+.file-detail {
+  margin: 0px;
 }

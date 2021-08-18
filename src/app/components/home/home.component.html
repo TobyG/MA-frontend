@@ -1,18 +1,34 @@
-
 <!-- TODO: flex-layout-->
-<div class="page"  fxLayout="row" fxLayoutAlign="space-around center">
+<div class="page">
 
-    <div class="container">
-        <h1 class="title">Detect.io</h1>
-        <h3>drop images of welds below to get statistics</h3>
+    <h1 class="title">Detect.io</h1>
+    <p>drop images of welds below to get statistics</p>
+
+    <div class="container upload-container">
+
         <upload></upload>
     </div>
-    
-    <div class="chart-container">
+
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33" title="Anzahl Bilder"
+            subtitle="39"></tile>
+        <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33" title="Anzahl Defekte"
+            subtitle="14"></tile>
+        <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33"
+            title="Unterschiedliche Defekte" subtitle="3"></tile>
+    </div>
+
+    <div class="container chart-container">
+
         <analytics></analytics>
     </div>
-    
+
+    <div class="container chart-container">
+
+        <ngx-charts-bar-vertical [view]="[300, 700]" [scheme]="colorScheme" [results]="single"
+        [legend]="true">
+    </ngx-charts-bar-vertical>
+    </div>
+
+
 </div>
-
-
-

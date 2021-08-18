@@ -16,6 +16,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { FileSizePipe } from "./pipes/file-size.pipe";
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TileComponent } from './components/tile/tile.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     UploadComponent,
     FileSizePipe,
     AnalyticsComponent,
+    TileComponent,
   ],
   imports: [
     BrowserModule,
