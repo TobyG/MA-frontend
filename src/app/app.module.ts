@@ -14,9 +14,11 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { FileSizePipe } from "./pipes/file-size.pipe";
-import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TileComponent } from './components/tile/tile.component';
+import { ImageTileComponent } from './components/image-tile/image-tile.component';
+import { MatTabsModule} from '@angular/material/tabs';
+import { ChartContainerComponent } from './components/chart-container/chart-container.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +28,9 @@ import { TileComponent } from './components/tile/tile.component';
     DragDropFileUploadDirective,
     UploadComponent,
     FileSizePipe,
-    AnalyticsComponent,
     TileComponent,
+    ImageTileComponent,
+    ChartContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { TileComponent } from './components/tile/tile.component';
     MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
+    MatTabsModule,
     //Fontawesome Icons?
     FlexLayoutModule
   ],

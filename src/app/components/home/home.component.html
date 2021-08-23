@@ -10,25 +10,61 @@
     </div>
 
     <div fxLayout="row" fxLayoutAlign="space-between center">
-        <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33" title="Anzahl Bilder"
-            subtitle="39"></tile>
-        <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33" title="Anzahl Defekte"
-            subtitle="14"></tile>
-        <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33"
-            title="Unterschiedliche Defekte" subtitle="3"></tile>
+        <tile *ngFor="let tile of tileData" fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33"
+            title="{{tile.title}}" subtitle="{{tile.subtitle}}"></tile>
     </div>
 
-    <div class="container chart-container">
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Images">
 
-        <analytics></analytics>
-    </div>
+            <div fxLayout="row wrap" fxLayoutAlign="start center">
+                <image-tile *ngFor="let num of [0,1,2,3,4]" fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33"
+                    fxFlex.xl="33"></image-tile>
+            </div>
 
-    <div class="container chart-container">
+        </mat-tab>
+        <mat-tab label="Details">
 
-        <ngx-charts-bar-vertical [view]="[300, 700]" [scheme]="colorScheme" [results]="single"
-        [legend]="true">
-    </ngx-charts-bar-vertical>
-    </div>
+            <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+                <chart-container title="Defect Overview">
+                    <div #containerRef class="chart-container">
+                        <ngx-charts-pie-chart [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
+                            [scheme]="colorScheme" [results]="single" [legend]="true" [labels]="true" [doughnut]="true">
+                        </ngx-charts-pie-chart>
+                    </div>
+                </chart-container>
+            </div>
+
+
+            <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+                <chart-container title="Defect Overview">
+                    <div #containerRef class="chart-container">
+                        <ngx-charts-bar-vertical [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
+                            [scheme]="colorScheme" [results]="single" [legend]="true">
+                        </ngx-charts-bar-vertical>
+                    </div>
+                </chart-container>
+            </div>
+
+
+            <!--
+            <div class="chart-container">
+
+                <analytics></analytics>
+            </div>
+
+            <div class="chart-container">
+
+                <ngx-charts-bar-vertical [view]="[300, 700]" [scheme]="colorScheme" [results]="single" [legend]="true">
+                </ngx-charts-bar-vertical>
+            </div>
+        -->
+
+        </mat-tab>
+    </mat-tab-group>
+
+
+
 
 
 </div>

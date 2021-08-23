@@ -1,5 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
+interface TileData {
+  title: String;
+  subtitle: String;
+  icon: String;
+}
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -7,6 +13,11 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HomeComponent implements OnInit {
   
+  tileData: TileData[] = [
+    {title: "Bilder", subtitle: "39", icon: ""},
+    {title: "Defekte", subtitle: "14", icon:""},
+    {title: "XX", subtitle: "3", icon: ""}
+  ]
 
   single: any[] = [
     {
