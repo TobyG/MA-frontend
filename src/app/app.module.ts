@@ -14,11 +14,13 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { FileSizePipe } from "./pipes/file-size.pipe";
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { TileComponent } from './components/tile/tile.component';
-import { ImageTileComponent } from './components/image-tile/image-tile.component';
-import { MatTabsModule} from '@angular/material/tabs';
-import { ChartContainerComponent } from './components/chart-container/chart-container.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { TileComponent } from "./components/tile/tile.component";
+import { ImageTileComponent } from "./components/image-tile/image-tile.component";
+import { MatTabsModule } from "@angular/material/tabs";
+import { ChartContainerComponent } from "./components/chart-container/chart-container.component";
+import { ImgViewerComponent } from "./components/img-viewer/img-viewer.component";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { ChartContainerComponent } from './components/chart-container/chart-cont
     TileComponent,
     ImageTileComponent,
     ChartContainerComponent,
+    ImgViewerComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +44,9 @@ import { ChartContainerComponent } from './components/chart-container/chart-cont
     MatButtonModule,
     MatIconModule,
     MatTabsModule,
+    MatDialogModule,
     //Fontawesome Icons?
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
