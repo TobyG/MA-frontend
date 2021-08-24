@@ -25,26 +25,31 @@
         </mat-tab>
         <mat-tab label="Details">
 
-            <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
-                <chart-container title="Defect Overview">
-                    <div #containerRef class="chart-container">
-                        <ngx-charts-pie-chart [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
-                            [scheme]="colorScheme" [results]="single" [legend]="true" [labels]="true" [doughnut]="true">
-                        </ngx-charts-pie-chart>
-                    </div>
-                </chart-container>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+                    <chart-container title="Defect Overview">
+                        <div #containerRef class="chart-container">
+                            <ngx-charts-bar-vertical [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
+                                [scheme]="colorScheme" [results]="single" [legend]="true">
+                            </ngx-charts-bar-vertical>
+                        </div>
+                    </chart-container>
+                </div>
+                <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+                    <chart-container title="Defect Overview">
+                        <div #containerRef class="chart-container">
+                            <ngx-charts-pie-chart [view]="[containerRef.offsetWidth, containerRef.offsetHeight]" [scheme]="colorScheme"
+                                [results]="single" [legend]="true" [labels]="true" [doughnut]="true">
+                            </ngx-charts-pie-chart>
+                        </div>
+                    </chart-container>
+                </div>
             </div>
 
+            
 
-            <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
-                <chart-container title="Defect Overview">
-                    <div #containerRef class="chart-container">
-                        <ngx-charts-bar-vertical [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
-                            [scheme]="colorScheme" [results]="single" [legend]="true">
-                        </ngx-charts-bar-vertical>
-                    </div>
-                </chart-container>
-            </div>
+
+          
 
 
             <!--
