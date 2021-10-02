@@ -1,3 +1,23 @@
-<div class="fill">
-    <img src="assets/weld.jpg" (click)="onViewImg()">
+<div class="tile-container">
+    <div class="fill">
+        <img src="assets/weld.jpg" (click)="onViewImg()">
+    </div>
+    <div class="defect-container">
+        <h3>{{img.name}}</h3>
+        <span [matBadge]="def.value" *ngFor="let def of img.totalDefects">
+            <img class="tot-def-icon" [src]="this.getSource(def.name)">
+        </span>
+
+        <!-- <p>{{img.measure_pixels}} pixels per {{img.measure_text}} {{img.measure_type}}</p> -->
+        <div fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let d of img.defects">
+            <div fxFlex="15">
+                <img class="tot-def-icon" [src]="getSource(d.type)">
+            </div>
+            <div fxFlex="85">
+                <p>{{d.width}} px x {{d.height}} px, {{d.area}} px&#178;</p>
+                <p>{{d.m_width}} {{img.measure_type}} x {{d.m_height}} {{img.measure_type}}, {{d.m_area}}
+                    {{img.measure_type}}&#178;</p>
+            </div>
+        </div>
+    </div>
 </div>

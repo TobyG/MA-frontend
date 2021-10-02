@@ -21,3 +21,22 @@ img {
   border-radius: 0px;
   transition: 0.2s;
 }
+
+.tile-container {
+  border-radius: 15px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.defect-container {
+  height: 200px;
+  overflow: scroll;
+  text-align: start;
+  padding: 15px;
+}
+
+.tot-def-icon {
+  height: 35px;
+  width: 35px;
+  margin-left: 10px;
+}

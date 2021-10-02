@@ -21,6 +21,8 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { ChartContainerComponent } from "./components/chart-container/chart-container.component";
 import { ImgViewerComponent } from "./components/img-viewer/img-viewer.component";
 import { MatDialogModule } from "@angular/material/dialog";
+import { HttpClientModule } from "@angular/common/http";
+import { MatBadgeModule } from "@angular/material/badge";
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatDialogModule,
     //Fontawesome Icons?
     FlexLayoutModule,
+    HttpClientModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
