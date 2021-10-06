@@ -45,4 +45,11 @@ export class ImageTileComponent implements OnInit {
     }
     return "";
   }
+
+  getChipColor(type: String) {
+    if (type == "hole") {
+      return "ff0000";
+    }
+    return "#ff0000";
+  }
 }

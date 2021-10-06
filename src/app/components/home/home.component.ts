@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
           },
         ],
         img: "",
-        name: "img1",
+        name: "95_phalu_008_004",
         totalDefects: [
           { name: "hole", value: 2 },
           { name: "crack", value: 0 },
@@ -80,5 +80,7 @@ export class HomeComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.response.images = [this.response.images[0], this.response.images[0]];
+  }
 }

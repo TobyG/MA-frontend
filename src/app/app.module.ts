@@ -23,6 +23,7 @@ import { ImgViewerComponent } from "./components/img-viewer/img-viewer.component
 import { MatDialogModule } from "@angular/material/dialog";
 import { HttpClientModule } from "@angular/common/http";
 import { MatBadgeModule } from "@angular/material/badge";
+import { MatChipsModule } from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MatBadgeModule } from "@angular/material/badge";
     FlexLayoutModule,
     HttpClientModule,
     MatBadgeModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
