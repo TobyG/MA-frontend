@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Response } from "src/app/models/Response";
+import { SnackService } from "src/app/services/snack.service";
 import { UploadService } from "src/app/services/upload.service";
 
 interface TileData {
@@ -76,7 +77,19 @@ export class HomeComponent implements OnInit {
     domain: ["#01205c", "#013089", "#0240b7", "#0250e5", "#3573ea	", "#6796ef	"],
   };
 
-  constructor(public uploadService: UploadService) {}
+  constructor(
+    public uploadService: UploadService,
+    private snackService: SnackService
+  ) {}
 
   ngOnInit(): void {}
+
+  onRefresh(): void {
+    this.uploadService.clearData();
+    this.snackService.openSnackBar("restarted app", "ok");
+  }
+
+  onExport(): void {
+    this.snackService.openSnackBar("exported CSV", "ok");
+  }
 }

@@ -36,7 +36,7 @@
 
             <div fxFlex="80">
                 <p>{{d.width}} px x {{d.height}} px, {{d.area}} px&#178;</p>
-                <p>{{d.m_width}} {{img.measure_type}} x {{d.m_height}} {{img.measure_type}}, {{d.m_area}}
+                <p>{{d.m_width | number:'1.2-2'}} {{img.measure_type}} x {{d.m_height | number:'1.2-2'}} {{img.measure_type}}, {{d.m_area | number:'1.2-2'}}
                     {{img.measure_type}}&#178;</p>
             </div>
 

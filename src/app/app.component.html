@@ -1,2 +1,15 @@
-
-<router-outlet></router-outlet>
+<mat-toolbar>
+    <div routerLink="" class="toolbar-title">
+        <span>W</span>eld 
+        <span>D</span>efect
+        <span>I</span>nformation
+        <span>S</span>ystem
+    </div>
+    <span class="my-spacer"></span>
+    <button routerLink="about" mat-icon-button>
+        <mat-icon>info</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="page">
+    <router-outlet></router-outlet>
+</div>

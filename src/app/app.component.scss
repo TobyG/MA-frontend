@@ -1,0 +1,25 @@
+.toolbar-title {
+  font-family: staatliches;
+  cursor: pointer;
+
+  span {
+    color: blue;
+  }
+}
+
+mat-toolbar {
+  background-color: white;
+}
+
+.my-spacer {
+  flex: 1 1 auto;
+}
+
+.page {
+  background-color: #f3f3f3;
+  height: calc(100vh - 64px - 60px);
+  overflow-y: scroll;
+  //padding: 50px;
+  text-align: center;
+  padding: 30px;
+}

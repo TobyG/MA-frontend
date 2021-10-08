@@ -25,6 +25,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     MatBadgeModule,
     MatChipsModule,
     MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

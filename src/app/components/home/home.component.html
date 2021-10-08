@@ -1,8 +1,10 @@
 <!-- TODO: flex-layout-->
-<div class="page">
 
+<div class="page">
+<!--
     <h1 class="title">WDIS</h1>
     <p class="subtitle">Weld Defect Information System</p>
+-->
 
     <div *ngIf="!this.uploadService.data" class="container upload-container">
         <upload></upload>
@@ -15,8 +17,8 @@
     </div>
     -->
 
-    <!-- <div *ngIf="this.uploadService.data"> -->
-    <div>
+    <div *ngIf="!this.uploadService.data"> 
+    <!--<div>-->
         <!-- <div fxLayout="row" fxLayoutAlign="space-between center">
             <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33"
                 title="{{this.uploadService.response.numberOfImgs}}" subtitle="Bilder">
@@ -26,6 +28,7 @@
             </tile>
         </div> -->
 
+        <!--
         <div fxLayout="row" fxLayoutAlign="space-between center">
             <div fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33">
                 <h1>{{this.uploadService.response.numberOfImgs}}</h1>
@@ -38,7 +41,22 @@
                 </p>
             </div>
         </div>
+        -->
 
+        <mat-toolbar>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                {{this.uploadService.response.numberOfImgs}}
+                <mat-icon matTooltip="images">image</mat-icon>
+                {{this.uploadService.response.numberOfDefects}}
+                <mat-icon matTooltip="defects">report_problem</mat-icon></div>
+            <span class="my-spacer"></span>
+            <button matTooltip="refresh" mat-icon-button (click)="onRefresh()">
+                <mat-icon>refresh</mat-icon>
+            </button>
+            <button matTooltip="csv export" mat-icon-button (click)="onExport()">
+                <mat-icon >assessment</mat-icon>
+            </button>
+        </mat-toolbar>
         <mat-tab-group mat-align-tabs="center">
 
             <mat-tab label="Images">
@@ -46,7 +64,7 @@
                 <p></p>
                 <div fxLayout="row wrap" fxLayoutAlign="start center">
                     <image-tile *ngFor="let img of this.uploadService.response.images" [img]="img" fxFlex.xs="100"
-                        fxFlex.sm="50" fxFlex.md="33" fxFlex.lg="25" fxFlex.xl="20">
+                        fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="33" fxFlex.xl="25">
                     </image-tile>
                 </div>
 
