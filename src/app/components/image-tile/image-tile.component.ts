@@ -29,6 +29,7 @@ export class ImageTileComponent implements OnInit {
   onViewImg() {
     const dialogRef = this.dialog.open(ImgViewerComponent, {
       autoFocus: false,
+      data: this.img,
     });
 
     dialogRef.afterClosed().subscribe((result) => {

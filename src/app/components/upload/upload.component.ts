@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Response } from "src/app/models/Response";
 import { SnackService } from "../../services/snack.service";
 import { UploadService } from "../../services/upload.service";
 
@@ -9,7 +10,7 @@ import { UploadService } from "../../services/upload.service";
 })
 export class UploadComponent implements OnInit {
   files: File[] = [];
-  mode: string = "";
+  upload = false;
   hovering: boolean = false;
 
   constructor(
@@ -38,44 +39,31 @@ export class UploadComponent implements OnInit {
   }
 
   addToUploads(fileList: any) {
-    console.log("addToUploads()");
     const files = [...fileList];
     this.files = this.files.concat(files);
-    console.log(files[0].size);
     this.files = this.files.filter((val) => {
       return val.size < 2000000;
     });
-    console.log(this.files.length);
-    console.log(this.files);
   }
 
   onUpload() {
-    this.mode = "upload";
-    //  let numUploads = 0;
-
-    /*
-    for (let i = 0; i < this.files.length; i++) {
-      // subscribe, then increase numUploads
-      this.uService.uploadFile(this.files[i]);
-
-      numUploads = numUploads + 1;
-      if (numUploads == this.files.length) {
-        let messg = "Successfully uploaded " + numUploads + " files";
-        this.snackService.openSnackBar(messg, "Close");
-      }
-    }
-*/
+    this.upload = true;
 
     let formData = new FormData();
     for (let i = 0; i < this.files.length; i++) {
       formData.append("images[]", this.files[i]);
     }
     this.uService.uploadFiles(formData).subscribe(
-      (val: any) => {
+      (val: Response) => {
         console.log(val);
+        this.uService.response = val;
+        this.uService.data = true;
+        this.upload = false;
       },
       (err: any) => {
+        this.snackService.openSnackBar(err, "ok");
         console.log(err);
+        this.upload = false;
       }
     );
   }

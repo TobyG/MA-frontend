@@ -1,5 +1,7 @@
+<p>drop images of welds to get statistics (max. 1 MB)</p>
+
 <div class="dropzone" [class.hovering]="hovering" fileDrop (dropped)="onDropFiles($event)"
-    (hovered)="toggleHover($event)" *ngIf="this.mode !== 'upload'">
+    (hovered)="toggleHover($event)" *ngIf="!this.upload">
 
     <p>Drag files here</p>
 
@@ -10,7 +12,7 @@
 
 </div>
 
-<div *ngIf="this.mode != 'upload' && files.length > 0" class="file-entries">
+<div *ngIf="files.length > 0" class="file-entries">
     <div class="file-entry" *ngFor="let file of this.files; let i = index" fxLayout="row"
         fxLayoutAlign="space-between center">
 
@@ -19,7 +21,7 @@
             <p class="file-detail">{{file.size | fileSize}}</p>
         </div>
 
-        <button *ngIf="mode != 'upload'" mat-icon-button (click)="onRemove(i)">
+        <button *ngIf="!this.upload" mat-icon-button (click)="onRemove(i)">
             <mat-icon>cancel</mat-icon>
         </button>
 
@@ -27,14 +29,6 @@
 
 </div>
 
-<button class="my-button upload-button" *ngIf="files.length > 0" (click)="onUpload()">Upload</button>
+<mat-spinner *ngIf="this.upload"></mat-spinner>
 
-
-<!--
-<mat-list *ngIf="this.mode == 'upload'">
-    <mat-list-item *ngFor="let file of this.files; let i = index">
-        <mat-icon matListIcon>insert_drive_file</mat-icon>
-        <h4 matLine>{{file.name}}</h4>
-    </mat-list-item>
-</mat-list>
--->
+<button *ngIf="!this.upload && files.length > 0" class="my-button upload-button" (click)="onUpload()">Upload</button>

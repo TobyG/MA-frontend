@@ -1,14 +1,25 @@
 .page {
   background-color: #f3f3f3;
-  //height: calc(100vh);
-  padding: 50px;
+  height: calc(100vh);
+  overflow-y: scroll;
+  //padding: 50px;
   text-align: center;
 }
 
-.title, .subtitle {
-  margin: 0px;
+.title,
+.subtitle {
+  //margin: 0px;
 }
 
+.title {
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+.subtitle {
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
 
 .container {
   padding: 25px;

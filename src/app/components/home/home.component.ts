@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Response } from "src/app/models/Response";
+import { UploadService } from "src/app/services/upload.service";
 
 interface TileData {
   title: String;
@@ -13,10 +14,7 @@ interface TileData {
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  myBase64 =
-    "b'/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYG'";
-
-  response: Response = {
+  /*response: Response = {
     images: [
       {
         defects: [
@@ -57,7 +55,7 @@ export class HomeComponent implements OnInit {
       { name: "Crack", value: 3 },
     ],
     errors: 0,
-  };
+  };*/
 
   tileData: TileData[] = [
     { title: "Bilder", subtitle: "39", icon: "" },
@@ -78,9 +76,7 @@ export class HomeComponent implements OnInit {
     domain: ["#01205c", "#013089", "#0240b7", "#0250e5", "#3573ea	", "#6796ef	"],
   };
 
-  constructor() {}
+  constructor(public uploadService: UploadService) {}
 
-  ngOnInit(): void {
-    this.response.images = [this.response.images[0], this.response.images[0]];
-  }
+  ngOnInit(): void {}
 }
