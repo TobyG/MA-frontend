@@ -4,6 +4,8 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Response } from "src/app/models/Response";
 
+const DELIMITER: string = ";";
+
 // import { Upload } from "src/app/models/Upload";
 
 @Injectable({
@@ -81,5 +83,75 @@ export class UploadService {
 
   clearData(): void {
     this.data = false;
+  }
+
+  /**
+   * converts object to CSV and opens download
+   * @param data array of data objects
+   * @param filename file name
+   */
+  downloadCSV(): void {
+    let data = this.response2.images;
+    let filename: string = "csv_download";
+    const headerList: string[] = [];
+    Object.entries(data[0]).forEach(([key, value]) => headerList.push(key));
+
+    const csvData: string = this.convertToCSV(data, headerList);
+
+    const blob: Blob = new Blob(["\ufeff" + csvData], {
+      type: "text/csv;charset=utf-8;",
+    });
+
+    const link: HTMLAnchorElement = document.createElement("a");
+    const url: string = URL.createObjectURL(blob);
+    const isSafariBrowser: boolean =
+      navigator.userAgent.indexOf("Safari") !== -1 &&
+      navigator.userAgent.indexOf("Chrome") === -1;
+    if (isSafariBrowser) {
+      // if Safari open in new window to save file with random filename.
+      link.setAttribute("target", "_blank");
+    }
+    link.setAttribute("href", url);
+    link.setAttribute("download", filename + ".csv");
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  /**
+   * converts an object to CSV
+   */
+  convertToCSV(objArray: object, headerList: string[]): string {
+    const array: any =
+      typeof objArray !== "object" ? JSON.parse(objArray) : objArray;
+
+    // initialize string
+    let str: string = "";
+
+    // add header row
+    let row: string = "";
+    headerList.forEach((header) => (row += header + DELIMITER));
+    // remove last comma
+    row = row.slice(0, -1);
+    // add newline
+    str += row + "\r\n";
+
+    // iterate through data
+    for (let i: number = 0; i < array.length; i++) {
+      row = "";
+
+      headerList.forEach((header) => {
+        if (typeof array[i][header] === "object") {
+          row += '"' + JSON.stringify(array[i][header]) + '"' + DELIMITER;
+        } else {
+          row += '"' + array[i][header] + '"' + DELIMITER;
+        }
+      });
+      row = row.slice(0, -1);
+      str += row + "\r\n";
+    }
+
+    return str;
   }
 }

@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "theme.scss";
+
 @font-face {
   font-family: staatliches;
   src: url(/assets/fonts/Staatliches-Regular.ttf) format("truetype");
@@ -16,5 +18,9 @@ body {
 }
 body {
   margin: 0;
-  font-family: staatliches, "Helvetica Neue", sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.my-spacer {
+  flex: 1 1 auto;
 }

@@ -17,6 +17,7 @@ export class DragDropFileUploadDirective {
 
   @HostListener("drop", ["$event"])
   onDrop($event: any) {
+    console.log("onDrop");
     // $event object is DragEvent and consists of dataTransfer, target, etc.
     $event.preventDefault();
     let transfer = $event.dataTransfer;

@@ -1,14 +1,10 @@
-<!-- TODO: flex-layout-->
 
 <div class="page">
-<!--
-    <h1 class="title">WDIS</h1>
-    <p class="subtitle">Weld Defect Information System</p>
--->
 
-    <div *ngIf="!this.uploadService.data" class="container upload-container">
-        <upload></upload>
-    </div>
+
+    <!-- <div  class="container upload-container"> -->
+        <upload *ngIf="!this.uploadService.data"></upload>
+    <!-- </div> -->
 
     <!--
     <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -17,8 +13,8 @@
     </div>
     -->
 
-    <div *ngIf="!this.uploadService.data"> 
-    <!--<div>-->
+    <div *ngIf="this.uploadService.data">
+    <!-- <div> -->
         <!-- <div fxLayout="row" fxLayoutAlign="space-between center">
             <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33"
                 title="{{this.uploadService.response.numberOfImgs}}" subtitle="Bilder">
@@ -64,7 +60,7 @@
                 <p></p>
                 <div fxLayout="row wrap" fxLayoutAlign="start center">
                     <image-tile *ngFor="let img of this.uploadService.response.images" [img]="img" fxFlex.xs="100"
-                        fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="33" fxFlex.xl="25">
+                        fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="33" fxFlex.xl="25">
                     </image-tile>
                 </div>
 
@@ -78,7 +74,7 @@
                             <div #containerRef class="chart-container">
                                 <ngx-charts-bar-vertical [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
                                     [scheme]="colorScheme" [results]="this.uploadService.response.totalDefects"
-                                    [legend]="true">
+                                    [legend]="true" xAxis="true" yAxis="true" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="defect" yAxisLabel="occurance">
                                 </ngx-charts-bar-vertical>
                             </div>
                         </chart-container>

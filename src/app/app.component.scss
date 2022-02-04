@@ -3,23 +3,25 @@
   cursor: pointer;
 
   span {
-    color: blue;
+    color: #0065bd;
+    margin-left: 5px;
   }
 }
 
 mat-toolbar {
-  background-color: white;
-}
-
-.my-spacer {
-  flex: 1 1 auto;
+  background-color: f3f3f3;
+  //position: relative;
+  //box-shadow: rgba(168, 175, 182, 0.2) 0px 8px 24px;
 }
 
 .page {
   background-color: #f3f3f3;
   height: calc(100vh - 64px - 60px);
   overflow-y: scroll;
-  //padding: 50px;
-  text-align: center;
   padding: 30px;
+}
+
+img {
+  width: 30px;
+  margin-right: 5px;
 }

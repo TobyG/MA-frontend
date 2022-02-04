@@ -15,7 +15,6 @@ import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { FileSizePipe } from "./pipes/file-size.pipe";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { TileComponent } from "./components/tile/tile.component";
 import { ImageTileComponent } from "./components/image-tile/image-tile.component";
 import { MatTabsModule } from "@angular/material/tabs";
 import { ChartContainerComponent } from "./components/chart-container/chart-container.component";
@@ -24,9 +23,9 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { HttpClientModule } from "@angular/common/http";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatChipsModule } from "@angular/material/chips";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     DragDropFileUploadDirective,
     UploadComponent,
     FileSizePipe,
-    TileComponent,
     ImageTileComponent,
     ChartContainerComponent,
     ImgViewerComponent,
@@ -56,9 +54,9 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     HttpClientModule,
     MatBadgeModule,
     MatChipsModule,
-    MatProgressSpinnerModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

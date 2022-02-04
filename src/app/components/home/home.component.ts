@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
   legendPosition: string = "below";
 
   colorScheme = {
-    domain: ["#01205c", "#013089", "#0240b7", "#0250e5", "#3573ea	", "#6796ef	"],
+    domain: ["#005293", "#64A0C8", "#A2AD00", "#E37222"],
   };
 
   constructor(
@@ -90,6 +90,7 @@ export class HomeComponent implements OnInit {
   }
 
   onExport(): void {
+    this.uploadService.downloadCSV();
     this.snackService.openSnackBar("exported CSV", "ok");
   }
 }

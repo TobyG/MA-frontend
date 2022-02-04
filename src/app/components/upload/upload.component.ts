@@ -35,6 +35,7 @@ export class UploadComponent implements OnInit {
   }
 
   onDropFiles(fileList: any) {
+    console.log("on drop");
     this.addToUploads(fileList);
   }
 
@@ -66,5 +67,9 @@ export class UploadComponent implements OnInit {
         this.upload = false;
       }
     );
+  }
+
+  onRestart() {
+    this.files = [];
   }
 }
