@@ -43,7 +43,8 @@ export class UploadComponent implements OnInit {
     const files = [...fileList];
     this.files = this.files.concat(files);
     this.files = this.files.filter((val) => {
-      return val.size < 2000000;
+      // smaller than 5MB
+      return val.size < 5000000;
     });
   }
 

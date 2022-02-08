@@ -2,7 +2,39 @@
 
     <h1>About</h1>
 
-    <p>...</p>
+    <p>This project was built within a Master Thesis conducted at the <i>iwb</i> at Technical University Munich. The
+        goal was to create a pipeline for researchers to train a convolutional neural network on labeled images to
+        detect welding defects and extract their metrics. The <i>iwb</i> had welding images that were taken from builds
+        created through an additive manufacturing process such as friction stir welding (FSW) or selective laser
+        melting (SLM). The images included the build and defects as well as a measurement line and text.</p>
+
+    <p>The challenges included:</p>
+    <ul>
+        <li>recognition of measurement text</li>
+        <li>detection and localization of measurement lines</li>
+        <li>segmentation of welding defects</li>
+    </ul>
+
+    <p>For the creation of a software-solution, following elements were used:</p>
+    <ul>
+        <li>Angular for frontend</li>
+        <li>Flask for backend</li>
+        <li>Detectron2 framework for recognition/segmentation tasks</li>
+        <li>Mask R-CNN network for defect segmentation</li>
+        <li>EasyOCR package for text recogntition</li>
+        <li>Faster R-CNN network for line detection</li>
+    </ul>
+
+    <p>The pipeline was setup in a way that the user can train locally on labeled images. In the thesis, a process is
+        also
+        explained where the user can label his own images. Then, with the updated model, the user can perform the
+        inference
+        step, which extracts the text and detects the measurement lines. With this information, the segmentation of the
+        welding defects is put into context accordingly. The image-selection process is done on the frontend. The images are then sent to the python-based backend, where
+        the inference step takes place. The result with the images and metrics are then sent back to the frontend to
+        display them.</p>
+
+    PIPELINE IMAGE
 
 
     <a href="https://tum.de" target=”_blank”>

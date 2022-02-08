@@ -1,15 +1,4 @@
-.container {
-  padding: 25px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin: auto auto 20px auto;
-}
 
-.upload-container {
-  margin-top: 50px;
-  width: 450px;
-}
 
 .chart-container {
   width: 100%;
@@ -21,37 +10,6 @@ mat-icon {
   margin-left: 5px;
 }
 
-/*
-::ng-deep .ngx-charts {
-  * {
-    // fill: black !important;
-    font-family: staatliches;
-  }
-
-  .tooltip {
-    font-family: staatliches;
-  }
+mat-toolbar {
+  background-color: #eeeeee;
 }
-
-::ng-deep .chart-legend {
-  .legend-labels {
-    font-family: staatliches;
-  }
-
-  .legend-title {
-    font-family: staatliches;
-  }
-}
-
-::ng-deep ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
-  .tooltip-caret.position-top {
-    border-top-color: white;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-  }
-
-  background-color: white;
-  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-  color: black;
-  font-family: staatliches;
-}
-*/

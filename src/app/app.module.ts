@@ -11,7 +11,6 @@ import { DragDropFileUploadDirective } from "./directives/file-drop.directive";
 import { UploadComponent } from "./components/upload/upload.component";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatButtonModule } from "@angular/material/button";
-import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { FileSizePipe } from "./pipes/file-size.pipe";
 import { FlexLayoutModule } from "@angular/flex-layout";

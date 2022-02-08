@@ -4,41 +4,33 @@
         <img src="{{'data:image/jpeg;base64,'+this.img.img}}" (click)="onViewImg()">
     </div>
 
-    <div class="defect-container">
+    <div class="header">
         <h3>{{img.name}}</h3>
 
         <mat-chip-list>
-            <mat-chip *ngFor="let def of img.totalDefects"  
-            [matBadge]="def.value" matBadgeColor="accent">{{def.name}}
-                
+            <mat-chip *ngFor="let def of img.totalDefects" [matBadge]="def.value" matBadgeColor="accent">{{def.name}}
             </mat-chip>
         </mat-chip-list>
+    </div>
 
+    <div class="defect-container">
 
-        <!-- 
-        <span [matBadge]="def.value" *ngFor="let def of img.totalDefects">
-            <img class="tot-def-icon" [src]="this.getSource(def.name)">
-        </span> -->
-
-        <!-- <p>{{img.measure_pixels}} pixels per {{img.measure_text}} {{img.measure_type}}</p> -->
-        <div fxLayout="row" fxLayoutAlign="space-between center" *ngFor="let d of img.defects">
-            <div fxFlex="20">
-
-                <div>
-                     <mat-chip-list>
+        <div  fxLayout="row" fxLayoutAlign="space-between center" *ngFor="let d of img.defects">
+            <div class="defect-row mw">
+                <div fxFlex="20">
+                    <mat-chip-list>
                         <mat-chip>{{d.type}}</mat-chip>
                     </mat-chip-list>
-
-
-                    <!-- <img class="tot-def-icon" [src]="getSource(d.type)"> -->
+                </div>
+    
+                <div fxFlex="80">
+                    <p>{{d.width}} px * {{d.height}} px, {{d.area}} px&#178;</p>
+                    <p>{{d.m_width | number:'1.2-2'}} {{img.measure_type}} * {{d.m_height | number:'1.2-2'}}
+                        {{img.measure_type}}, {{d.m_area | number:'1.2-2'}}
+                        {{img.measure_type}}&#178;</p>
                 </div>
             </div>
-
-            <div fxFlex="80">
-                <p>{{d.width}} px x {{d.height}} px, {{d.area}} px&#178;</p>
-                <p>{{d.m_width | number:'1.2-2'}} {{img.measure_type}} x {{d.m_height | number:'1.2-2'}} {{img.measure_type}}, {{d.m_area | number:'1.2-2'}}
-                    {{img.measure_type}}&#178;</p>
-            </div>
+           
 
         </div>
 

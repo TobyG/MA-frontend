@@ -30,6 +30,7 @@ export class ImageTileComponent implements OnInit {
     const dialogRef = this.dialog.open(ImgViewerComponent, {
       autoFocus: false,
       data: this.img,
+      panelClass: 'dialog-container'
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -37,16 +38,7 @@ export class ImageTileComponent implements OnInit {
     });
   }
 
-  getSource(d: String): String {
-    if (d == "hole") {
-      return "assets/hole.svg";
-    }
-    if (d == "crack") {
-      return "assets/crack.svg";
-    }
-    return "";
-  }
-
+  // in the future: different chip colors
   getChipColor(type: String) {
     if (type == "hole") {
       return "ff0000";

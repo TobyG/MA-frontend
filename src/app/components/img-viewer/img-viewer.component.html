@@ -1,9 +1,17 @@
-<h2 mat-dialog-title>{{data.name}}</h2>
+<!-- <h2 mat-dialog-title>{{data.name}}</h2> -->
+
+<mat-toolbar>
+
+    <span>{{data.name}}</span>
+    <span class="my-spacer"></span>
+    <button mat-icon-button matTooltip="download" (click)="onDownloadImg()">
+        <mat-icon>download</mat-icon>
+    </button>
+
+</mat-toolbar>
+
 <mat-dialog-content>
 
     <img src="{{'data:image/jpeg;base64,'+data.img}}">
 
 </mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-button mat-dialog-close>Cancel</button>
-</mat-dialog-actions>

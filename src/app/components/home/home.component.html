@@ -1,58 +1,31 @@
-
 <div class="page">
 
 
     <!-- <div  class="container upload-container"> -->
-        <upload *ngIf="!this.uploadService.data"></upload>
+    <upload *ngIf="!this.uploadService.data"></upload>
     <!-- </div> -->
 
-    <!--
-    <div fxLayout="row" fxLayoutAlign="space-between center">
-        <tile *ngFor="let tile of tileData" fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33"
-            title="{{tile.title}}" subtitle="{{tile.subtitle}}"></tile>
-    </div>
-    -->
 
     <div *ngIf="this.uploadService.data">
-    <!-- <div> -->
-        <!-- <div fxLayout="row" fxLayoutAlign="space-between center">
-            <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33"
-                title="{{this.uploadService.response.numberOfImgs}}" subtitle="Bilder">
-            </tile>
-            <tile fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33"
-                title="{{this.uploadService.response.numberOfDefects}}" subtitle="Defekte">
-            </tile>
-        </div> -->
-
-        <!--
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33">
-                <h1>{{this.uploadService.response.numberOfImgs}}</h1>
-                <p><mat-icon>image</mat-icon></p>
-            </div>
-            <div fxFlex.xs="33" fxFlex.sm="33" fxFlex.md="33" fxFlex.lg="33" fxFlex.xl="33">
-                <h1>{{this.uploadService.response.numberOfDefects}}</h1>
-                <p>
-                    <mat-icon>report_problem</mat-icon>
-                </p>
-            </div>
-        </div>
-        -->
 
         <mat-toolbar>
             <div fxLayout="row" fxLayoutAlign="space-around center">
                 {{this.uploadService.response.numberOfImgs}}
                 <mat-icon matTooltip="images">image</mat-icon>
                 {{this.uploadService.response.numberOfDefects}}
-                <mat-icon matTooltip="defects">report_problem</mat-icon></div>
+                <mat-icon matTooltip="defects">report_problem</mat-icon>
+            </div>
             <span class="my-spacer"></span>
             <button matTooltip="refresh" mat-icon-button (click)="onRefresh()">
                 <mat-icon>refresh</mat-icon>
             </button>
             <button matTooltip="csv export" mat-icon-button (click)="onExport()">
-                <mat-icon >assessment</mat-icon>
+                <mat-icon>assessment</mat-icon>
             </button>
         </mat-toolbar>
+
+        <!-- TABS SECTION WITH GRAPHS -->
+
         <mat-tab-group mat-align-tabs="center">
 
             <mat-tab label="Images">
@@ -74,7 +47,8 @@
                             <div #containerRef class="chart-container">
                                 <ngx-charts-bar-vertical [view]="[containerRef.offsetWidth, containerRef.offsetHeight]"
                                     [scheme]="colorScheme" [results]="this.uploadService.response.totalDefects"
-                                    [legend]="true" xAxis="true" yAxis="true" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="defect" yAxisLabel="occurance">
+                                    [legend]="true" xAxis="true" yAxis="true" [showXAxisLabel]="true"
+                                    [showYAxisLabel]="true" xAxisLabel="defect" yAxisLabel="occurance">
                                 </ngx-charts-bar-vertical>
                             </div>
                         </chart-container>
@@ -94,7 +68,7 @@
             </mat-tab>
 
         </mat-tab-group>
+        
     </div>
-
 
 </div>
