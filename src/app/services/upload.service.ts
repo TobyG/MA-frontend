@@ -12,7 +12,7 @@ const DELIMITER: string = ";";
 export class UploadService {
   static readonly BASE_URL = environment.base_url;
 
-  data = true;
+  data = false;
   response2: Response = {
     images: [
       {
